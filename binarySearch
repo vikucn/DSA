@@ -1,0 +1,53 @@
+/*
+You are given an integer array 'A' of size 'N', sorted in ascending order. You are also given an integer 'target'.
+
+Your task is to write a function to search for 'target' in the array 'A'. If it exists, return its index in 0-based indexing. 
+Otherwise, return -1.
+
+Note: You must write an algorithm whose time complexity is O(logN).
+*/
+
+#include<iostream>
+using namespace std;
+
+int binarySearch(int arr[],int n,int t)
+{
+    int start = 0;
+    int end = n-1;
+    int mid;
+    
+    while(start<=end)
+    {
+         mid= (start+end)/2;
+         if(t==arr[mid])
+         {
+             return mid;
+         }
+         else if(t<arr[mid])
+         {
+             end=mid-1;
+         }
+         else
+         {
+             start=mid+1;
+         }
+    }
+    
+    return -1;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int t;
+    cin>>t;
+    int ans=binarySearch(arr,n,t);
+    cout<<ans;
+    
+}
