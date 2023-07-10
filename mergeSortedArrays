@@ -1,0 +1,36 @@
+void merge(int arr1[], int size1, int arr2[], int size2, int ans[])
+{
+      int a=0,b=0,k=0;
+      
+  
+       while(a<size1 && b<size2)
+       {
+         if (arr1[a] <= arr2[b]) {
+           ans[k] = arr1[a];
+           a++;
+           k++;
+         }
+        else
+           {
+               ans[k]=arr2[b];
+               b++;
+               k++;
+           }
+       }
+       while(a<size1)
+       {
+           ans[k]=arr1[a];
+           a++;
+           k++;
+       }
+       while(b<size2)
+       {
+           ans[k]=arr2[b];
+           b++;
+           k++;
+       }
+
+   
+ 
+}
+
